@@ -29,6 +29,7 @@
   <modules>
     <module>eureka-server</module>
     <module>api-gateway</module>
+    <module>data-streaming-service</module>
     <module>data-ingestion-service</module>
     <module>data-analytics-service</module>
     <module>webapp</module>
