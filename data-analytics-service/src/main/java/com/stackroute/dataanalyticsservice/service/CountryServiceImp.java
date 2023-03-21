@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.stackroute.dataanalyticsservice.entity.Country;
 import com.stackroute.dataanalyticsservice.entity.Customer;
+import com.stackroute.dataanalyticsservice.entity.NameAndCredit;
+import com.stackroute.dataanalyticsservice.entity.NameAndCustomers;
+import com.stackroute.dataanalyticsservice.entity.NameAndSalary;
 import com.stackroute.dataanalyticsservice.repository.CountryRepository;
 import com.stackroute.dataanalyticsservice.repository.CustomerRepository;
 
@@ -44,15 +47,26 @@ public class CountryServiceImp implements CountryService{
 			//if the country is new then we will create new country in the country repository
 			Country new_country=new Country(customer.getCountry(),1,(float)customer.getCredit_card(),customer.getEstimated_salary());
 			countryRepository.save(new_country);
+			
 		}
 		
 		
 	}
 
 	@Override
-	public List<Country> getNumberOfCustomers() {
+	public List<NameAndCustomers> getNumberOfCustomers() {
 		
-		return countryRepository.findAllByCountryAndNumberOfCustomers();
+		return countryRepository.findAllNameAndCustomers();
+	}
+
+	@Override
+	public List<NameAndCredit> getAverageOfCreditScore() {
+		return countryRepository.findAllNameAndCreditScore();
+	}
+
+	@Override
+	public List<NameAndSalary> getAverageOfSalary() {
+		return countryRepository.findAllNameAndSalary();
 	}
 
 	

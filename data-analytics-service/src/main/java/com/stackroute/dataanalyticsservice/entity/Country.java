@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Country {
+public class Country{
 	
 	@Id
 	private String name;
