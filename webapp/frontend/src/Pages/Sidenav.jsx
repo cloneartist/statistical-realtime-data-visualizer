@@ -151,6 +151,7 @@ const Search = styled('div')(({ theme }) => ({
 //   {search bar code ends}
 
 export default function Sidenav() {
+  
         // [This code belongs to NOTIFIVATION]
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -249,11 +250,11 @@ export default function Sidenav() {
         </MenuItem>
       </Menu>
     );
-    // [This code belongs to NOTIFIVATION]
+    // [This code belongs to NOTIFICATION]
   
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const [menudata, setMenudata] = useState(Home);
+  const [open, setOpen] = useState(true);
+  const [menudata, setMenudata] = useState("Home");
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -264,6 +265,8 @@ export default function Sidenav() {
   };
 
   return (
+
+    <>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{backgroundColor:"blue"}}>
@@ -348,7 +351,7 @@ export default function Sidenav() {
            </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open} >
-        <DrawerHeader sx={{backgroundColor:"blue"}}> <AiFillBank size={30}/>&nbsp;<h4>United Color Bank</h4>
+        <DrawerHeader sx={{backgroundColor:"blue"}}> <AiFillBank size={25}/>&nbsp;<h6>United Color Bank</h6>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -502,13 +505,12 @@ export default function Sidenav() {
                 </ListItemIcon>
                 <ListItemText primary="Charts" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
-
-              <div className="admininfo"> <FaUserCircle size={40}/>
-                <h3>Saket K. Baranwal</h3>
-               <button className='btns'><b>Sign Out</b></button>
-              </div>
             </ListItem>
         </List>
+        <div className="admininfo"> <FaUserCircle size={40}/>
+                <h3 className='username'>Saket K. Baranwal</h3>
+               <button className='btns'><b>Sign Out</b></button>
+              </div>
         <Divider /> 
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
@@ -524,8 +526,12 @@ export default function Sidenav() {
             {menudata == "Charts" && <Charts/>}
 
          {/* linking pages code ends here */}
-  
+                 
       </Box>
     </Box>
+
+  
+    </>
+    
   );
 }
