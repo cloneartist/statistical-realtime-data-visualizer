@@ -10,7 +10,7 @@ const Chart1 = (props) => {
   useEffect(() => {
     const getData = async () => {
         //API URL
-    const url = 'http://localhost:8080/'+props.url;
+    const url = 'http://localhost:8091/'+props.url;
     
     try {
 

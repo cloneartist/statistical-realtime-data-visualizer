@@ -28,7 +28,7 @@ public class Consumer {
 		System.out.println("Recieved" + banktxn);
 		Customer customer = new Customer();
 		customer.setAge(Integer.parseInt(banktxn.getAge()));
-		customer.setBalance(Integer.parseInt(banktxn.getBalance()));
+		customer.setBalance((int) Double.parseDouble(banktxn.getBalance()));
 		customer.setCountry(banktxn.getCountry());
 		customer.setCredit_card(Integer.parseInt(banktxn.getCredit_card()));
 		customer.setCredit_score(Integer.parseInt(banktxn.getCredit_score()));
