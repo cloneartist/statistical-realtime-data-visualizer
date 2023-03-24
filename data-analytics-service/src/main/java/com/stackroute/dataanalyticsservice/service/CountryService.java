@@ -2,11 +2,10 @@ package com.stackroute.dataanalyticsservice.service;
 
 import java.util.List;
 
-import com.stackroute.dataanalyticsservice.entity.Country;
-import com.stackroute.dataanalyticsservice.entity.Customer;
-import com.stackroute.dataanalyticsservice.entity.NameAndCredit;
-import com.stackroute.dataanalyticsservice.entity.NameAndCustomers;
-import com.stackroute.dataanalyticsservice.entity.NameAndSalary;
+import com.stackroute.dataanalyticsservice.model.Customer;
+import com.stackroute.dataanalyticsservice.model.NameAndCredit;
+import com.stackroute.dataanalyticsservice.model.NameAndCustomers;
+import com.stackroute.dataanalyticsservice.model.NameAndSalary;
 
 public interface CountryService {
 

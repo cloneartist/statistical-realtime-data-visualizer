@@ -1,4 +1,4 @@
-package com.stackroute.dataanalyticsservice.entity;
+package com.stackroute.dataanalyticsservice.model;
 
 public class NameAndCredit {
 	private String name;

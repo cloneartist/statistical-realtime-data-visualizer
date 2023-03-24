@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stackroute.dataanalyticsservice.entity.Customer;
+import com.stackroute.dataanalyticsservice.model.Customer;
 import com.stackroute.dataanalyticsservice.service.CountryService;
 import com.stackroute.dataanalyticsservice.service.CustomerService;
 

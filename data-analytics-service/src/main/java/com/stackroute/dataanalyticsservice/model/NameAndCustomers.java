@@ -1,4 +1,4 @@
-package com.stackroute.dataanalyticsservice.entity;
+package com.stackroute.dataanalyticsservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
