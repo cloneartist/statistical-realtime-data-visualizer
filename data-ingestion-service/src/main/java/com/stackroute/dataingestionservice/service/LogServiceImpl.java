@@ -13,7 +13,6 @@ public class LogServiceImpl implements LogService {
 	@Autowired
 	private LogRepository logRepository;
 
-	@Autowired
 	public LogServiceImpl(LogRepository logRepository) {
 		// TODO Auto-generated constructor stub
 

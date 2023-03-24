@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.stackroute.dataingestionservice.model.User;
 import com.stackroute.dataingestionservice.service.UserService;
 
-import reactor.core.publisher.Mono;
-
 @RestController
 @RequestMapping("api/v1/users")
 public class UserController {
@@ -24,7 +22,7 @@ public class UserController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Mono<User> saveUser(@RequestBody User user) {
-		return userService.sendUser(user);
+	public void saveUser(@RequestBody User user) {
+		userService.sendUser(user);
 	}
 }
