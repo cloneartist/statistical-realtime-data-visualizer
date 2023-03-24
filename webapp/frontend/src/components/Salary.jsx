@@ -1,10 +1,11 @@
 import React from "react";
+import Chart1 from "./chart1";
+
 const Salary = () =>{
     return (
         <>
-        <h1>466578 dollars</h1>
-        <h1>466578 dollars</h1>
-        <h1>466578 dollars</h1>
+          <Chart1 url="country_vs_salary" name="Average Salary" yComponentName="averageSalary" title="Country vs  Average Salary"/>
+
         
         </>
     );

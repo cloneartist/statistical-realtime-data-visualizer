@@ -20,13 +20,13 @@ import MailIcon from '@mui/icons-material/Mail';
 import Home from '../components/Home';
 import CreditCard from '../components/CreditCard';
 import Salary from '../components/Salary';
-import Demographics from '../components/Demographics';
 import Country from '../components/Country';
 import Churn from '../components/Churn';
 import Charts from '../components/Charts';
-import { AiFillHome,AiFillCreditCard,AiOutlineAreaChart,AiFillCheckCircle,AiFillPieChart,AiFillBank} from 'react-icons/ai';
+import { AiFillHome,AiFillCreditCard,AiFillCheckCircle,AiFillPieChart,AiFillBank} from 'react-icons/ai';
 import { BiMoney } from 'react-icons/bi';
 import { FaUserCircle} from 'react-icons/fa';
+import { FaUserTie} from 'react-icons/fa';
 import { GiDecapitation} from 'react-icons/gi';
 import './Sidenav.css';
 import SearchIcon from '@mui/icons-material/Search';
@@ -37,6 +37,7 @@ import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Customer from '../components/Customer';
 
 
 
@@ -421,7 +422,7 @@ export default function Sidenav() {
               </ListItemButton>
             </ListItem>
 
-            <ListItem  disablePadding sx={{ display: 'block' }}  onClick={()=>setMenudata("Demographics")}>
+            <ListItem  disablePadding sx={{ display: 'block' }}  onClick={()=>setMenudata("Customer")}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -436,9 +437,9 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                   <AiOutlineAreaChart size={30}/>
+                   <FaUserTie size={30}/>
                 </ListItemIcon>
-                <ListItemText primary="Demographics" sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary="Customer" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
 
@@ -520,7 +521,7 @@ export default function Sidenav() {
             {menudata == "Home" && <Home/>}
             {menudata == "CreditCard" && <CreditCard/>}
             {menudata == "Salary" && <Salary/>}
-            {menudata == "Demographics" && <Demographics/>}
+            {menudata == "Customer" && <Customer/>}
             {menudata == "Country" && <Country/>}
             {menudata == "Churn" && <Churn/>}
             {menudata == "Charts" && <Charts/>}
