@@ -26,16 +26,15 @@ public class CountryServiceImp implements CountryService {
 	@Override
 	public void addcountry(Customer customer) {
 
-		if (this.customerRepository.findById(customer.getCustomer_id()).isPresent()) {
+		if (!this.customerRepository.findById(customer.getCustomer_id()).isPresent()) {
 			return;
 		}
 		Optional<Country> op = countryRepository.findByName(customer.getCountry());
 		// checking whether that country mentioned in the customer already exist in the
 		// country repository
+		System.out.println("country Name :" + customer.getCountry());
 		if (op.isPresent()) {
-			System.out.println("country  available");
 			Country country = op.get();
-			System.out.println(country);
 			// adding 1 to the existing number of customers in that country
 			country.setNumberOfCustomers(country.getNumberOfCustomers() + 1);
 			// updating the average of the credit score by adding the new credit score of
@@ -48,6 +47,8 @@ public class CountryServiceImp implements CountryService {
 			country.setAverageSalary(
 					(((double) country.getAverageSalary() * ((double) country.getNumberOfCustomers() - 1))
 							+ customer.getEstimated_salary()) / (double) country.getNumberOfCustomers());
+			System.out.println(country);
+			countryRepository.save(country);
 
 		} else {
 

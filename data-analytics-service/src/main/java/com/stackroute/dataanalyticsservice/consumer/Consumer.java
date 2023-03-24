@@ -17,6 +17,7 @@ public class Consumer {
 	private BankService bankService;
 	@Autowired
 	private LogService logService;
+
 	@Autowired
 	private CustomerService customerService;
 	@Autowired
@@ -36,8 +37,9 @@ public class Consumer {
 		customer.setGender(banktxn.getGender());
 		logService.saveLog(banktxn);
 		bankService.saveTxn(banktxn);
-		countryService.addcountry(customer);
 		customerService.saveCustomerService(customer);
+
+		countryService.addcountry(customer);
 
 	}
 }
