@@ -15,14 +15,6 @@ public class DbConfig {
 
 		ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
 		initializer.setConnectionFactory(connectionFactory);
-		// This will create our database table and schema
-		// initializer.setDatabasePopulator(new ResourceDatabasePopulator(new
-		// ClassPathResource("dbsetup.sql")));
-
-		// This will drop our table after we are done so we can have a fresh start next
-		// run
-		// initializer.setDatabaseCleaner(new ResourceDatabasePopulator(new
-		// ClassPathResource("cleanup.sql")));
 		return initializer;
 	}
 }
