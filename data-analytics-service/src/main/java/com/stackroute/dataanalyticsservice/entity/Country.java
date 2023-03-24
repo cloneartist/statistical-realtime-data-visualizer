@@ -1,16 +1,21 @@
 package com.stackroute.dataanalyticsservice.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Country{
 	
+	
 	@Id
 	private String name;
 	private int numberOfCustomers;
-	private float averageCreditScore;
-	private float averageSalary;
+	private double averageCreditScore;
+	private double averageSalary;
+	
+	
 	
 	
 	public Country() {
@@ -18,7 +23,7 @@ public class Country{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Country(String name, int numberOfCustomers, float averageCreditScore, float averageSalary) {
+	public Country(String name, int numberOfCustomers, double averageCreditScore, double averageSalary) {
 		super();
 		this.name = name;
 		this.numberOfCustomers = numberOfCustomers;
@@ -38,16 +43,16 @@ public class Country{
 	public void setNumberOfCustomers(int numberOfCustomers) {
 		this.numberOfCustomers = numberOfCustomers;
 	}
-	public float getAverageCreditScore() {
+	public double getAverageCreditScore() {
 		return averageCreditScore;
 	}
-	public void setAverageCreditScore(float averageCreditScore) {
+	public void setAverageCreditScore(double averageCreditScore) {
 		this.averageCreditScore = averageCreditScore;
 	}
-	public float getAverageSalary() {
+	public double getAverageSalary() {
 		return averageSalary;
 	}
-	public void setAverageSalary(float averageSalary) {
+	public void setAverageSalary(double averageSalary) {
 		this.averageSalary = averageSalary;
 	}
 	
@@ -56,6 +61,8 @@ public class Country{
 		return "Country [name=" + name + ", numberOfCustomers=" + numberOfCustomers + ", averageCreditScore="
 				+ averageCreditScore + ", averageSalary=" + averageSalary + "]";
 	}
+	
+	
 	
 	
 	

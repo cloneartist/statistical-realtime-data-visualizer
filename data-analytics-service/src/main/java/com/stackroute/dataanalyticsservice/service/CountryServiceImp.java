@@ -27,25 +27,27 @@ public class CountryServiceImp implements CountryService{
 	
 	@Override
 	public void addcountry(Customer customer) {
-//		Optional<Customer> op_Id=customerRepository.findById(customer.getCustomer_id());
+
 		if(this.customerRepository.findById(customer.getCustomer_id()).isPresent()) {
 			return;
 		}
 		Optional<Country> op=countryRepository.findByName(customer.getCountry());
 		//checking whether that country mentioned in the customer already exist in the country repository
 		if(op.isPresent()) {
+			System.out.println("country  available");
 			Country country=op.get();
 			//adding 1 to the existing number of customers in that country
 			country.setNumberOfCustomers(country.getNumberOfCustomers() +1); 
 			//updating the average of the credit score by adding the new credit score of new customer
-			country.setAverageCreditScore((((float)country.getAverageCreditScore()*((float)country.getNumberOfCustomers()-1))+customer.getCredit_card())/((float)country.getNumberOfCustomers()));
+			country.setAverageCreditScore((((double)country.getAverageCreditScore()*((double)country.getNumberOfCustomers()-1))+customer.getCredit_card())/((double)country.getNumberOfCustomers()));
 			//updating the average of the salary by adding the new credit score of new customer
-			country.setAverageSalary((((float)country.getAverageSalary()*((float)country.getNumberOfCustomers()-1))+customer.getEstimated_salary())/(float)country.getNumberOfCustomers());
+			country.setAverageSalary((((double)country.getAverageSalary()*((double)country.getNumberOfCustomers()-1))+customer.getEstimated_salary())/(double)country.getNumberOfCustomers());
 			
 			
 		}else {
+
 			//if the country is new then we will create new country in the country repository
-			Country new_country=new Country(customer.getCountry(),1,(float)customer.getCredit_card(),customer.getEstimated_salary());
+			Country new_country=new Country(customer.getCountry(),1,(float)customer.getCredit_score(),customer.getEstimated_salary());
 			countryRepository.save(new_country);
 			
 		}

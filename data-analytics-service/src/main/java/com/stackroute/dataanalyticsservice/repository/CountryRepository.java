@@ -14,7 +14,7 @@ import com.stackroute.dataanalyticsservice.entity.NameAndCustomers;
 import com.stackroute.dataanalyticsservice.entity.NameAndSalary;
 
 @Repository
-public interface CountryRepository extends JpaRepository<Country,Long> {
+public interface CountryRepository extends JpaRepository<Country,String> {
 
 	Optional<Country> findByName(String country);
 	
@@ -27,6 +27,10 @@ public interface CountryRepository extends JpaRepository<Country,Long> {
 
 	@Query("SELECT new com.stackroute.dataanalyticsservice.entity.NameAndSalary(c.name,c.averageSalary) FROM Country c")
 	List<NameAndSalary> findAllNameAndSalary();
+	
+	
+	
+	
 	
 	
 	
