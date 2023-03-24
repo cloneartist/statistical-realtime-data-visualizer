@@ -25,6 +25,6 @@ public class UserController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Mono<User> saveUser(@RequestBody User user) {
-		return userService.saveUser(user);
+		return userService.sendUser(user);
 	}
 }

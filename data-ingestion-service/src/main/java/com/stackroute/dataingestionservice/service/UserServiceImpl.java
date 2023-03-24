@@ -18,8 +18,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Mono<User> saveUser(User user) {
-
+	public Mono<User> sendUser(User user) {
 		producer.send(user);
 		return null;
 

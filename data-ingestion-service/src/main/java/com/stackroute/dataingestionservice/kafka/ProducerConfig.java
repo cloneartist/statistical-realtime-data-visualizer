@@ -15,7 +15,7 @@ import reactor.kafka.sender.SenderOptions;
 public class ProducerConfig {
 
 	@Bean
-	public ReactiveKafkaProducerTemplate<String, User> reactiveKafkaProducerTemplate(KafkaProperties properties) {
+	ReactiveKafkaProducerTemplate<String, User> reactiveKafkaProducerTemplate(KafkaProperties properties) {
 		Map<String, Object> props = properties.buildProducerProperties();
 		return new ReactiveKafkaProducerTemplate<String, User>(SenderOptions.create(props));
 	}
