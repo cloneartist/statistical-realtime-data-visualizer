@@ -3,7 +3,7 @@ package com.stackroute.dataingestionservice.service;
 import org.springframework.stereotype.Service;
 
 import com.stackroute.dataingestionservice.kafka.Producer;
-import com.stackroute.dataingestionservice.model.User;
+import com.stackroute.dataingestionservice.model.BankDataNormalize;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void sendUser(User user) {
-		producer.send(user);
+	public void sendUser(BankDataNormalize bankDataNormalize) {
+		producer.send(bankDataNormalize);
 
 	}
 

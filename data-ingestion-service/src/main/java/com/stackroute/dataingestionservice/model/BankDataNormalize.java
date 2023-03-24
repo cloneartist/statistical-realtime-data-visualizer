@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class BankDataNormalize {
 	@Id
 	@Column(name = "customer_id", length = 30)
 	private String customer_id;

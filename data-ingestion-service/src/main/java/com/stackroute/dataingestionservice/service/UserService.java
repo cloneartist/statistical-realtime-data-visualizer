@@ -1,9 +1,9 @@
 package com.stackroute.dataingestionservice.service;
 
-import com.stackroute.dataingestionservice.model.User;
+import com.stackroute.dataingestionservice.model.BankDataNormalize;
 
 public interface UserService {
 
-	void sendUser(User user);
+	void sendUser(BankDataNormalize bankDataNormalize);
 
 }

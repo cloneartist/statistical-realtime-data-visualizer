@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stackroute.dataingestionservice.model.User;
+import com.stackroute.dataingestionservice.model.BankDataNormalize;
 import com.stackroute.dataingestionservice.service.UserService;
 
 @RestController
@@ -22,7 +22,7 @@ public class UserController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public void saveUser(@RequestBody User user) {
-		userService.sendUser(user);
+	public void saveUser(@RequestBody BankDataNormalize bankDataNormalize) {
+		userService.sendUser(bankDataNormalize);
 	}
 }
