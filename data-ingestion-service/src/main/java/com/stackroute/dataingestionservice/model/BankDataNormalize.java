@@ -1,27 +1,14 @@
 package com.stackroute.dataingestionservice.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
-@Entity
 public class BankDataNormalize {
-	@Id
-	@Column(name = "customer_id", length = 30)
+
 	private String customer_id;
-	@Column(name = "credit_score", length = 30)
 	private String credit_score;
-	@Column(name = "country", length = 10)
 	private String country;
-	@Column(name = "gender", length = 20)
 	private String gender;
-	@Column(name = "age", length = 3)
 	private String age;
-	@Column(name = "balance", length = 20)
 	private String balance;
-	@Column(name = "credit_card", length = 2)
 	private String credit_card;
-	@Column(name = "estimated_salary", length = 30)
 	private String estimated_salary;
 
 	public String getCustomer_id() {

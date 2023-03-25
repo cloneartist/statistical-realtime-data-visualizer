@@ -2,20 +2,23 @@ package com.stackroute.dataingestionservice.model;
 
 import java.time.Instant;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.relational.core.mapping.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table
 public class IngestionServiceLog {
-	@Id
-	@Column(name = "id", length = 45)
+
 	private String id;
-	@Column(name = "customer_id", length = 30)
 	private String customer_id;
-	@Column(name = "packet_status", length = 30)
 	private String packet_status;
-	@Column(name = "createdAt")
 	private Instant createdAt;
 
 	public String getId() {
