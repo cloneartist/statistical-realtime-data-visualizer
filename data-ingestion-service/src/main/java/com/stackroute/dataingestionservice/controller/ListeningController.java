@@ -26,7 +26,7 @@ public class ListeningController {
 
 	@GetMapping("/listen")
 	public void startStreaming() {
-		webClient.get().uri("http://localhost:8092/api/stream").accept(MediaType.APPLICATION_STREAM_JSON).retrieve()
+		webClient.get().uri("http://localhost:8092/getUserData").accept(MediaType.APPLICATION_STREAM_JSON).retrieve()
 				.bodyToFlux(User.class).doOnNext(this::processUser).blockLast();
 	}
 
