@@ -10,7 +10,7 @@ const Chart1 = (props) => {
   useEffect(() => {
     const getData = async () => {
         //API URL
-    const url = 'http://localhost:8080/'+props.url;
+    const url = 'http://localhost:8091/'+props.url;
     
     try {
 
@@ -52,23 +52,35 @@ const Chart1 = (props) => {
     options = { 
       plotOptions: {
         bar: {
-          columnWidth: 50
+          columnWidth: 50,
+          distributed: true,
         }
       },
       dataLabels: {
         enabled: false
       },
       
-    fill: {
-      colors: ["#b74656"]
-    },
+    // fill: {
+    //   colors: ["#b74656"]
+    // },
       
      title:{
       text:props.title,
       align:'center'
      },
-      chart: { id: 'bar-chart'},
-    
+      chart: { id: 'bar-chart',
+
+
+      //
+      animations: {
+        enabled: true,
+        easing: 'linear',
+        dynamicAnimation: {
+          speed: 1000,
+        },},},
+        //
+
+
       xaxis: {
         categories: name,
         title: {
@@ -103,13 +115,14 @@ const Chart1 = (props) => {
       },
       plotOptions: {
         bar: {
-          columnWidth: 50
+          columnWidth: 50,
+          distributed: true,
         }
       },
   
-      fill: {
-        colors: ["#1B998B"]
-      },
+      // fill: {
+      //   colors: ["#1B998B"]
+      // },
 
      title:{
       text:props.title,
@@ -130,9 +143,9 @@ const Chart1 = (props) => {
         {
           labels: {
             show: true,
-            formatter: function(val) {
-              return val.toFixed(0);
-            }
+            // formatter: function(val) {
+            //   return val.toFixed(0);
+            // }
           },
           title: {
             text: 'Average Credit Score',
@@ -148,15 +161,16 @@ const Chart1 = (props) => {
     options = { 
       plotOptions: {
         bar: {
-          columnWidth: 50
+          columnWidth: 50,
+          distributed: true,
         }
       },
       dataLabels: {
         enabled: false
       },
-      fill: {
-        colors: ["#006b3f"]
-      },
+      // fill: {
+      //   colors: ["#006b3f"]
+      // },
     
 
      title:{
