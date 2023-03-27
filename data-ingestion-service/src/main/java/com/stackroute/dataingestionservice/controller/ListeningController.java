@@ -2,7 +2,6 @@ package com.stackroute.dataingestionservice.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -13,7 +12,6 @@ import com.stackroute.dataingestionservice.model.BankDataNormalize;
 import com.stackroute.dataingestionservice.model.User;
 
 @RestController
-@RequestMapping("/api")
 public class ListeningController {
 	private final Producer producer;
 	private final WebClient webClient;
