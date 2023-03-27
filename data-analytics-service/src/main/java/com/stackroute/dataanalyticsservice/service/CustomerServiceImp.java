@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.stackroute.dataanalyticsservice.entity.Customer;
+import com.stackroute.dataanalyticsservice.model.Customer;
 import com.stackroute.dataanalyticsservice.repository.CustomerRepository;
 
 @Service
