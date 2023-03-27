@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
-
+import '../components/chart1.css';
 const Chart1 = (props) => {
   
   const [yComponent, setnumberOfCustomers] = useState([]);
@@ -36,7 +36,7 @@ const Chart1 = (props) => {
 
 
   const series = [ 
-    //data on the y-axis
+    
     {
       name: props.name,
       data: yComponent
@@ -46,17 +46,34 @@ const Chart1 = (props) => {
   // let options_for_customers;
   let options;
 
-      
+      //chart data for country vs no. of customers
   if(props.yComponentName=="numberOfCustomers"){
+    
     options = { 
-     
+      plotOptions: {
+        bar: {
+          columnWidth: 50
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      
+    fill: {
+      colors: ["#b74656"]
+    },
+      
      title:{
       text:props.title,
       align:'center'
      },
       chart: { id: 'bar-chart'},
+    
       xaxis: {
-        categories: name
+        categories: name,
+        title: {
+          text: 'Country',
+        },
       },
 
       
@@ -64,18 +81,84 @@ const Chart1 = (props) => {
       yaxis: [
         {
           labels: {
+            show: true,
             formatter: function(val) {
               return val.toFixed(0);
             }
+          },
+          title: {
+            text: 'No. Of Customers',
           }
         }
       ]
         
   
       }
-  }else{
+      //chart data for country vs avg creditscore
+  }else if(props.yComponentName=="averageCreditScore"){
+    
     options = { 
-     
+      dataLabels: {
+        enabled: false
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: 50
+        }
+      },
+  
+      fill: {
+        colors: ["#1B998B"]
+      },
+
+     title:{
+      text:props.title,
+      align:'center'
+     },
+      chart: { id: 'bar-chart'},
+      xaxis: {
+       categories: name,
+        title: {
+          text: 'Country',
+        },
+      },
+    
+
+      
+    
+      yaxis: [
+        {
+          labels: {
+            show: true,
+            formatter: function(val) {
+              return val.toFixed(0);
+            }
+          },
+          title: {
+            text: 'Average Credit Score',
+          }
+        }
+      ]
+        
+  
+      }
+  }
+  //chart data for country vs avg salary
+  else{
+    options = { 
+      plotOptions: {
+        bar: {
+          columnWidth: 50
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      fill: {
+        colors: ["#006b3f"]
+      },
+    
+
      title:{
       text:props.title,
       align:'center',
@@ -83,14 +166,28 @@ const Chart1 = (props) => {
      },
       chart: { id: 'bar-chart'},
       xaxis: {
-        categories: name
-      }
+        categories: name,
+        title: {
+          text: 'Country',
+        },
+      },
+      yaxis: [
+        {
+          labels: {
+            show: true,
+          },
+          title: {
+            text: 'Average Salary',
+          }
+        
+        }]
   }
   
   };
 
   return (
-    <div>
+    <div className='chartdet'>
+      
       <Chart
         options={options}
         series={series}

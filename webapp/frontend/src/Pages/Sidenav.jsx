@@ -29,8 +29,6 @@ import { FaUserCircle} from 'react-icons/fa';
 import { FaUserTie} from 'react-icons/fa';
 import { GiDecapitation} from 'react-icons/gi';
 import './Sidenav.css';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
@@ -108,48 +106,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// {Search bar code}
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.5),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  }));
-  
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  }));
-  
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(30)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '40ch',
-      },
-    },
-  }));
-//   {search bar code ends}
+
 
 export default function Sidenav() {
   
@@ -270,7 +227,7 @@ export default function Sidenav() {
     <>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{backgroundColor:"blue"}}>
+      <AppBar position="fixed" open={open} sx={{backgroundColor:"navy"}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -284,40 +241,13 @@ export default function Sidenav() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" noWrap component="div">
+          <Typography variant="h6" noWrap component="div">
             Admin Dashboard
           </Typography>
-
-
-            {/* [search bar code] */}
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="May I help You !!!...."
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-            {/* [search bar code] */}
 {/* {---------------------------------------------------------------------------------------------------------} */}
                 {/* [Notification code STARTS here] */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={400} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               size="large"
               edge="end"
@@ -352,7 +282,7 @@ export default function Sidenav() {
            </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open} >
-        <DrawerHeader sx={{backgroundColor:"blue"}}> <AiFillBank size={25}/>&nbsp;<h6>United Color Bank</h6>
+        <DrawerHeader sx={{backgroundColor:"navy"}}> <AiFillBank size={25} color='white'/>&nbsp;<h6 className='heading'><b>United Color Bank</b></h6>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -397,7 +327,7 @@ export default function Sidenav() {
                 >
                    <AiFillCreditCard size={30}/>
                 </ListItemIcon>
-                <ListItemText primary="Credit Card" sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary="Credit Score" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
 
@@ -518,13 +448,13 @@ export default function Sidenav() {
         {/* side bar code ends here */}
 
         {/* Linking pages starts here */}
-            {menudata == "Home" && <Home/>}
-            {menudata == "CreditCard" && <CreditCard/>}
-            {menudata == "Salary" && <Salary/>}
-            {menudata == "Customer" && <Customer/>}
-            {menudata == "Country" && <Country/>}
-            {menudata == "Churn" && <Churn/>}
-            {menudata == "Charts" && <Charts/>}
+            {menudata === "Home" && <Home/>}
+            {menudata === "CreditCard" && <CreditCard/>}
+            {menudata === "Salary" && <Salary/>}
+            {menudata === "Customer" && <Customer/>}
+            {menudata === "Country" && <Country/>}
+            {menudata === "Churn" && <Churn/>}
+            {menudata === "Charts" && <Charts/>}
 
          {/* linking pages code ends here */}
                  
