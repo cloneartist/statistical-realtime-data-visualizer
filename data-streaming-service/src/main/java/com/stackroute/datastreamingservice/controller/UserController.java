@@ -4,7 +4,6 @@ package com.stackroute.datastreamingservice.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stackroute.datastreamingservice.model.User;
@@ -13,7 +12,6 @@ import com.stackroute.datastreamingservice.service.UserService;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/api")
 public class UserController {
 	
 	@Autowired 
