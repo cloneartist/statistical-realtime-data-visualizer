@@ -10,7 +10,7 @@ import com.stackroute.dataanalyticsservice.entity.NameAndSalary;
 
 public interface CountryService {
 
-	void addcountry(Customer customer);
+	void AggregateCountryDataOrAddCountry(String countryName,int creditScore,double salary);
 
 	List<NameAndCustomers> getNumberOfCustomers();
 
