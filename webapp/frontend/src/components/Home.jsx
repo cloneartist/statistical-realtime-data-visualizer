@@ -1,11 +1,18 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 const Home  = () => {
+  fetch("http://localhost:8080/customer").then(res=>{
+    console.log(res.body);
+  })
+  
     return (
         <> <br /><br /><br /><br />
 <div>
-<Table striped bordered hover size="sm">
+{/* <Table striped bordered hover size="sm">
       <thead>
         <tr>
           <th>S.NO</th>
@@ -42,7 +49,7 @@ const Home  = () => {
           <td></td>
         </tr>
       </tbody>
-    </Table>
+    </Table> */}
     </div>
         </>
     );

@@ -22,10 +22,6 @@ public class CountryServiceImp implements CountryService{
 	CountryRepository countryRepository;
 	
 	
-	@Autowired
-	CustomerRepository customerRepository;
-	
-	
 	//In this method if given country already exist in the country table we aggregate country data which means increase the average of
 	//credit score and salary of that country and increase the number of customers of that country ,
 	//In the case if customer is from the new country we add the data of the country to the country table
