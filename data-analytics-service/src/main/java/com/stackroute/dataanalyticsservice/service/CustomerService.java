@@ -6,7 +6,7 @@ import com.stackroute.dataanalyticsservice.entity.Customer;
 
 public interface CustomerService {
 
-	Customer saveCustomerService(Customer customer);
+	Customer saveCustomer(Customer customer);
 
 	List<Customer> showCustomer();
 

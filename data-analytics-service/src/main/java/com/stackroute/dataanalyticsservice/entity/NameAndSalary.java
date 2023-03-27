@@ -2,7 +2,7 @@ package com.stackroute.dataanalyticsservice.entity;
 
 public class NameAndSalary {
 	private String name;
-	private float averageSalary;
+	private double averageSalary;
 	
 
 	public NameAndSalary() {
@@ -11,7 +11,7 @@ public class NameAndSalary {
 	}
 	
 	
-	public NameAndSalary(String name, float averageSalary) {
+	public NameAndSalary(String name, double averageSalary) {
 		super();
 		this.name = name;
 		this.averageSalary = averageSalary;
@@ -24,10 +24,10 @@ public class NameAndSalary {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getAverageSalary() {
+	public double getAverageSalary() {
 		return averageSalary;
 	}
-	public void setAverageSalary(float averageSalary) {
+	public void setAverageSalary(double averageSalary) {
 		this.averageSalary = averageSalary;
 	}
 	

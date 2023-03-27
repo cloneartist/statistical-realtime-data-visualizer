@@ -23,9 +23,7 @@ public class CustomerController {
 	
 	@PostMapping("/customer")
 	public Customer saveCustomer(@RequestBody Customer customer) {
-		countryService.addcountry(customer);
-		
-		return customerService.saveCustomerService(customer);
+		return customerService.saveCustomer(customer);
 	}
 	
 	

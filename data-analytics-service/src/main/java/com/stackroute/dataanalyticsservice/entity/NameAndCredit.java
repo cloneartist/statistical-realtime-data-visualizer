@@ -2,7 +2,7 @@ package com.stackroute.dataanalyticsservice.entity;
 
 public class NameAndCredit {
 	private String name;
-	private float averageCreditScore;
+	private double averageCreditScore;
 	
 	
 	
@@ -15,7 +15,7 @@ public class NameAndCredit {
 	
 	
 	
-	public NameAndCredit(String name, float averageCreditScore) {
+	public NameAndCredit(String name, double averageCreditScore) {
 		super();
 		this.name = name;
 		this.averageCreditScore = averageCreditScore;
@@ -30,10 +30,10 @@ public class NameAndCredit {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getAverageCreditScore() {
+	public double getAverageCreditScore() {
 		return averageCreditScore;
 	}
-	public void setAverageCreditScore(float averageCreditScore) {
+	public void setAverageCreditScore(double averageCreditScore) {
 		this.averageCreditScore = averageCreditScore;
 	}
 	
