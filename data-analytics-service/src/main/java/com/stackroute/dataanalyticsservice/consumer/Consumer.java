@@ -37,9 +37,11 @@ public class Consumer {
 		customer.setGender(banktxn.getGender());
 		logService.saveLog(banktxn);
 		bankService.saveTxn(banktxn);
-		customerService.saveCustomerService(customer);
+		customerService.saveCustomer(customer);
 
-		countryService.addcountry(customer);
+		countryService.AggregateCountryDataOrAddCountry(banktxn.getCountry(),
+				Integer.parseInt(banktxn.getCredit_card()), Double.parseDouble(banktxn.getEstimated_salary()));
+		;
 
 	}
 }
