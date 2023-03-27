@@ -7,11 +7,11 @@ import java.util.function.Consumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.stackroute.dataanalyticsservice.entity.Country;
-import com.stackroute.dataanalyticsservice.entity.Customer;
-import com.stackroute.dataanalyticsservice.entity.NameAndCredit;
-import com.stackroute.dataanalyticsservice.entity.NameAndCustomers;
-import com.stackroute.dataanalyticsservice.entity.NameAndSalary;
+import com.stackroute.dataanalyticsservice.model.Country;
+import com.stackroute.dataanalyticsservice.model.Customer;
+import com.stackroute.dataanalyticsservice.model.NameAndCredit;
+import com.stackroute.dataanalyticsservice.model.NameAndCustomers;
+import com.stackroute.dataanalyticsservice.model.NameAndSalary;
 import com.stackroute.dataanalyticsservice.repository.CountryRepository;
 import com.stackroute.dataanalyticsservice.repository.CustomerRepository;
 
@@ -59,7 +59,7 @@ public class CountryServiceImp implements CountryService{
 
 	@Override
 	public List<NameAndCustomers> getNumberOfCustomers() {
-		
+
 		return countryRepository.findAllNameAndCustomers();
 	}
 
@@ -73,8 +73,4 @@ public class CountryServiceImp implements CountryService{
 		return countryRepository.findAllNameAndSalary();
 	}
 
-	
-
-	
-	
 }
