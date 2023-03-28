@@ -2,7 +2,7 @@ spring:
   datasource: 
     url: jdbc:mysql://localhost:3306/kafkadb
     username: root
-    password: My@12345678
+    password: adith
   jpa:
     hibernate:
       ddl-auto: update
