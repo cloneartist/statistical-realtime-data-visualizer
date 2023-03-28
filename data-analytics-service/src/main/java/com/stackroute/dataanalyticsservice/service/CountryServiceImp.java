@@ -22,19 +22,21 @@ public class CountryServiceImp implements CountryService {
 	@Autowired
 	CustomerRepository customerRepository;
 
+	
 	// In this method if given country already exist in the country table we
 	// aggregate country data which means increase the average of
-	// credit score and salary of that country and increase the number of customers
-	// of that country ,
+	// credit score and average salary of that country and increase the number of customers
+	// of that country by  1,
+	
 	// In the case if customer is from the new country we add the data of the
 	// country to the country table
 	@Override
 	public void AggregateCountryDataOrAddCountry(String countryName, int creditScore, double salary) {
 
 		Optional<Country> op = countryRepository.findByName(countryName);
+		
 		// checking whether that country mentioned in the customer already exist in the
 		// country repository
-
 		if (op.isPresent()) {
 			Country country = op.get();
 			// adding 1 to the existing number of customers in that country
@@ -60,16 +62,20 @@ public class CountryServiceImp implements CountryService {
 
 	}
 
+	
+	//fetches country name,number of customers from country table 
 	@Override
 	public List<NameAndCustomers> getNumberOfCustomers() {
 		return countryRepository.findAllNameAndCustomers();
 	}
 
+	//fetches country name,average credit score from country table
 	@Override
 	public List<NameAndCredit> getAverageOfCreditScore() {
 		return countryRepository.findAllNameAndCreditScore();
 	}
 
+	//fetches country name,average salary from country table
 	@Override
 	public List<NameAndSalary> getAverageOfSalary() {
 		return countryRepository.findAllNameAndSalary();

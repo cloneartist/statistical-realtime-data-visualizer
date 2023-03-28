@@ -1,5 +1,6 @@
 package com.stackroute.dataanalyticsservice.model;
 
+//This model is just created to fetch the name,credit_score from country table (Refer custom query in the country repository)
 public class NameAndCredit {
 	private String name;
 	private double averageCreditScore;

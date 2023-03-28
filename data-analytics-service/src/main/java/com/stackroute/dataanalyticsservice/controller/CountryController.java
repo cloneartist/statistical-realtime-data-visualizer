@@ -21,18 +21,21 @@ public class CountryController {
 	@Autowired
 	CountryService countryService;
 	
+	//An API which gives the data of total number of customer with respective to country from country table 
 	@GetMapping("/country_vs_customers")
 	@CrossOrigin
 	public List<NameAndCustomers> numberOfCustomers(){
 		return countryService.getNumberOfCustomers();
 	}
 	
+	//An API which gives the data of total average of credit score with respective to country from country table 
 	@GetMapping("/country_vs_credit")
 	@CrossOrigin
 	public List<NameAndCredit> averageOfCreditScore(){
 		return countryService.getAverageOfCreditScore();
 	}
 	
+	//An API which gives the data of total average of salary with respective to country from country table 
 	@GetMapping("/country_vs_salary")
 	@CrossOrigin
 	public List<NameAndSalary> averageOfSalary(){
