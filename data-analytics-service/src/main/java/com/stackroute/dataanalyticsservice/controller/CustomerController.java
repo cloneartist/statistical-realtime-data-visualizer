@@ -14,6 +14,7 @@ import com.stackroute.dataanalyticsservice.service.CountryService;
 import com.stackroute.dataanalyticsservice.service.CustomerService;
 
 @RestController
+@RequestMapping("analytics")
 public class CustomerController {
 
 	@Autowired
