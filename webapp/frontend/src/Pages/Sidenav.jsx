@@ -20,17 +20,12 @@ import MailIcon from '@mui/icons-material/Mail';
 import Home from '../components/Home';
 import CreditCard from '../components/CreditCard';
 import Salary from '../components/Salary';
-import Country from '../components/Country';
-import Churn from '../components/Churn';
-import Charts from '../components/Charts';
 import { AiFillHome,AiFillCreditCard,AiFillCheckCircle,AiFillPieChart,AiFillBank} from 'react-icons/ai';
 import { BiMoney } from 'react-icons/bi';
 import { FaUserCircle} from 'react-icons/fa';
 import { FaUserTie} from 'react-icons/fa';
-import { GiDecapitation} from 'react-icons/gi';
+import { FiMonitor} from 'react-icons/fi';
 import './Sidenav.css';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
@@ -38,6 +33,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Customer from '../components/Customer';
+import Monitor from '../components/Monitor';
 
 
 
@@ -108,52 +104,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// {Search bar code}
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.5),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  }));
-  
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  }));
-  
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(30)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '40ch',
-      },
-    },
-  }));
-//   {search bar code ends}
+
 
 export default function Sidenav() {
   
-        // [This code belongs to NOTIFIVATION]
+        // [This code belongs to NOTIFICATION]
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   
@@ -270,7 +225,7 @@ export default function Sidenav() {
     <>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{backgroundColor:"blue"}}>
+      <AppBar position="fixed" open={open} sx={{backgroundColor:"navy"}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -284,40 +239,13 @@ export default function Sidenav() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" noWrap component="div">
+          <Typography variant="h6" noWrap component="div">
             Admin Dashboard
           </Typography>
-
-
-            {/* [search bar code] */}
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="May I help You !!!...."
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-            {/* [search bar code] */}
 {/* {---------------------------------------------------------------------------------------------------------} */}
                 {/* [Notification code STARTS here] */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={400} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               size="large"
               edge="end"
@@ -352,7 +280,7 @@ export default function Sidenav() {
            </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open} >
-        <DrawerHeader sx={{backgroundColor:"blue"}}> <AiFillBank size={25}/>&nbsp;<h6>United Color Bank</h6>
+        <DrawerHeader sx={{backgroundColor:"navy"}}> <AiFillBank size={25} color='white'/>&nbsp;<h6 className='heading'><b>United Color Bank</b></h6>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -397,7 +325,7 @@ export default function Sidenav() {
                 >
                    <AiFillCreditCard size={30}/>
                 </ListItemIcon>
-                <ListItemText primary="Credit Card" sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary="Credit Score" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
 
@@ -444,7 +372,7 @@ export default function Sidenav() {
             </ListItem>
 
 
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Country")}>
+            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Monitor")}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -459,72 +387,30 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                   <AiFillCheckCircle size={30}/>
+                   <FiMonitor size={30} />
                 </ListItemIcon>
-                <ListItemText primary="Country"  sx={{ opacity: open ? 1 : 0 }}/>
+                <ListItemText primary="Monitor" sx={{ opacity: open ? 3 : 0 }} />
               </ListItemButton>
             </ListItem>
 
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Churn")}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                   <GiDecapitation size={30} />
-                </ListItemIcon>
-                <ListItemText primary="Churn" sx={{ opacity: open ? 3 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }}    onClick={()=>setMenudata("Charts")}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                   <AiFillPieChart size={30}/>
-                </ListItemIcon>
-                <ListItemText primary="Charts" sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
+          
         </List>
-        <div className="admininfo"> <FaUserCircle size={40}/>
+        {/* <div className="admininfo"> <FaUserCircle size={40}/>
                 <h3 className='username'>Saket K. Baranwal</h3>
                <button className='btns'><b>Sign Out</b></button>
-              </div>
+              </div> */}
         <Divider /> 
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         {/* side bar code ends here */}
 
         {/* Linking pages starts here */}
-            {menudata == "Home" && <Home/>}
-            {menudata == "CreditCard" && <CreditCard/>}
-            {menudata == "Salary" && <Salary/>}
-            {menudata == "Customer" && <Customer/>}
-            {menudata == "Country" && <Country/>}
-            {menudata == "Churn" && <Churn/>}
-            {menudata == "Charts" && <Charts/>}
+            {menudata === "Home" && <Home/>}
+            {menudata === "CreditCard" && <CreditCard/>}
+            {menudata === "Salary" && <Salary/>}
+            {menudata === "Customer" && <Customer/>}
+            {menudata === "Monitor" && <Monitor/>}
+            
 
          {/* linking pages code ends here */}
                  

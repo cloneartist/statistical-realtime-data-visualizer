@@ -37,9 +37,7 @@ public class Consumer {
 		customer.setGender(banktxn.getGender());
 		logService.saveLog(banktxn);
 		bankService.saveTxn(banktxn);
-		customerService.saveCustomerService(customer);
-
-		countryService.addcountry(customer);
+		customerService.saveCustomer(customer);
 
 	}
 }

@@ -1,5 +1,7 @@
 package com.stackroute.dataingestionservice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,4 +27,12 @@ public class LogServiceImpl implements LogService {
 
 		return logRepository.save(log);
 	}
+
+	@Override
+	public Mono<List<IngestionServiceLog>> showLog() {
+		// TODO Auto-generated method stub
+		Mono<List<IngestionServiceLog>> log = logRepository.findAll().collectList();
+		return log;
+	}
+	
 }

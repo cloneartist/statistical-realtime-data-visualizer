@@ -12,6 +12,7 @@ import com.stackroute.dataingestionservice.model.BankDataNormalize;
 import com.stackroute.dataingestionservice.model.User;
 
 @RestController
+@RequestMapping("/ingestion")
 public class ListeningController {
 	private final Producer producer;
 	private final WebClient webClient;
@@ -24,9 +25,9 @@ public class ListeningController {
 		this.objectMapper = new ObjectMapper();
 	}
 
-	@GetMapping("/listen")
+	@GetMapping("/receiveUserData")
 	public void startStreaming() {
-		webClient.get().uri("http://localhost:8092/getUserData").accept(MediaType.APPLICATION_STREAM_JSON).retrieve()
+		webClient.get().uri("http://localhost:9090/streaming/getUserData").accept(MediaType.APPLICATION_STREAM_JSON).retrieve()
 				.bodyToFlux(User.class).doOnNext(this::processUser).blockLast();
 	}
 
