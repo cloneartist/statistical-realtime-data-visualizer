@@ -6,7 +6,7 @@ import axios from 'axios';
 const Home  = () => {
   
   const columns = [{ field: 'customer_id',headerName:'Customer Id' ,width:180},{ field: 'credit_score',headerName:'Credit Score',flex:1}, { field: 'country',headerName:'Country', flex:1},{ field: 'gender',headerName:'Gender' ,width:180},{ field: 'age',headerName:'Age'},{ field: 'balance',headerName:'Balance',flex:1},{ field: 'credit_card',headerName:'Credit Card',flex:1},{ field: 'estimated_salary',headerName:'Estimated Salary', flex:1}];
-    let url ='http://localhost:8091/customer';
+    let url ='http://localhost:9090/analytics/customer';
 
 
   const [filterModel, setFilterModel] = React.useState({

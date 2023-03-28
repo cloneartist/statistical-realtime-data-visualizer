@@ -17,7 +17,7 @@ const Chart1 = (props) => {
     // } catch (error) {
     //     console.log(error);
     // }
-    await axios(`http://localhost:8091/${props.url}`).then((res) => {
+    await axios(`http://localhost:9090/analytics/${props.url}`).then((res) => {
       setnumberOfCustomers(res.data.map((item) => item[props.yComponentName]));
       setname(res.data.map((item) => item.name));
     });
