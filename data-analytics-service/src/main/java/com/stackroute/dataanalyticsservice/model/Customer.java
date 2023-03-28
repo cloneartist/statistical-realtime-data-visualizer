@@ -1,4 +1,4 @@
-package com.stackroute.dataanalyticsservice.entity;
+package com.stackroute.dataanalyticsservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,26 +17,6 @@ public class Customer {
 	private double estimated_salary;
 	
 	
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	public Customer(Long customer_id, int credit_score, String country, String gender, int age, int balance,
-			int credit_card, double estimated_salary) {
-		super();
-		this.customer_id = customer_id;
-		this.credit_score = credit_score;
-		this.country = country;
-		this.gender = gender;
-		this.age = age;
-		this.balance = balance;
-		this.credit_card = credit_card;
-		this.estimated_salary = estimated_salary;
-	}
-
-
 	public Long getCustomer_id() {
 		return customer_id;
 	}

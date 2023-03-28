@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stackroute.dataanalyticsservice.entity.Country;
-import com.stackroute.dataanalyticsservice.entity.NameAndCredit;
-import com.stackroute.dataanalyticsservice.entity.NameAndCustomers;
-import com.stackroute.dataanalyticsservice.entity.NameAndSalary;
+import com.stackroute.dataanalyticsservice.model.Country;
+import com.stackroute.dataanalyticsservice.model.NameAndCredit;
+import com.stackroute.dataanalyticsservice.model.NameAndCustomers;
+import com.stackroute.dataanalyticsservice.model.NameAndSalary;
 import com.stackroute.dataanalyticsservice.service.CountryService;
 
 @RestController
