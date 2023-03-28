@@ -20,14 +20,11 @@ import MailIcon from '@mui/icons-material/Mail';
 import Home from '../components/Home';
 import CreditCard from '../components/CreditCard';
 import Salary from '../components/Salary';
-import Country from '../components/Country';
-import Churn from '../components/Churn';
-import Charts from '../components/Charts';
 import { AiFillHome,AiFillCreditCard,AiFillCheckCircle,AiFillPieChart,AiFillBank} from 'react-icons/ai';
 import { BiMoney } from 'react-icons/bi';
 import { FaUserCircle} from 'react-icons/fa';
 import { FaUserTie} from 'react-icons/fa';
-import { GiDecapitation} from 'react-icons/gi';
+import { FiMonitor} from 'react-icons/fi';
 import './Sidenav.css';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
@@ -36,6 +33,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Customer from '../components/Customer';
+import Monitor from '../components/Monitor';
 
 
 
@@ -374,7 +372,7 @@ export default function Sidenav() {
             </ListItem>
 
 
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Country")}>
+            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Monitor")}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -389,59 +387,18 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                   <AiFillCheckCircle size={30}/>
+                   <FiMonitor size={30} />
                 </ListItemIcon>
-                <ListItemText primary="Country"  sx={{ opacity: open ? 1 : 0 }}/>
+                <ListItemText primary="Monitor" sx={{ opacity: open ? 3 : 0 }} />
               </ListItemButton>
             </ListItem>
 
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Churn")}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                   <GiDecapitation size={30} />
-                </ListItemIcon>
-                <ListItemText primary="Churn" sx={{ opacity: open ? 3 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }}    onClick={()=>setMenudata("Charts")}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                   <AiFillPieChart size={30}/>
-                </ListItemIcon>
-                <ListItemText primary="Charts" sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
+          
         </List>
-        <div className="admininfo"> <FaUserCircle size={40}/>
+        {/* <div className="admininfo"> <FaUserCircle size={40}/>
                 <h3 className='username'>Saket K. Baranwal</h3>
                <button className='btns'><b>Sign Out</b></button>
-              </div>
+              </div> */}
         <Divider /> 
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
@@ -452,9 +409,8 @@ export default function Sidenav() {
             {menudata === "CreditCard" && <CreditCard/>}
             {menudata === "Salary" && <Salary/>}
             {menudata === "Customer" && <Customer/>}
-            {menudata === "Country" && <Country/>}
-            {menudata === "Churn" && <Churn/>}
-            {menudata === "Charts" && <Charts/>}
+            {menudata === "Monitor" && <Monitor/>}
+            
 
          {/* linking pages code ends here */}
                  
