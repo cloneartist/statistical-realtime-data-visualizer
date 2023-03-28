@@ -42,13 +42,11 @@ public class CountryServiceImp implements CountryService {
 			// updating the average of the credit score by adding the new credit score of
 			// new customer
 			country.setAverageCreditScore(
-					(((double) country.getAverageCreditScore() * ((double) country.getNumberOfCustomers() - 1))
-							+ creditScore) / ((double) country.getNumberOfCustomers()));
+					(((double) country.getAverageCreditScore() * ((double) country.getNumberOfCustomers() - 1))+ creditScore) / ((double) country.getNumberOfCustomers()));
 			// updating the average of the salary by adding the new credit score of new
 			// customer
 			country.setAverageSalary(
-					(((double) country.getAverageSalary() * ((double) country.getNumberOfCustomers() - 1)) + salary)
-							/ (double) country.getNumberOfCustomers());
+					(((double) country.getAverageSalary() * ((double) country.getNumberOfCustomers() - 1)) + salary)/ (double) country.getNumberOfCustomers());
 			countryRepository.save(country);
 
 		} else {
@@ -64,7 +62,6 @@ public class CountryServiceImp implements CountryService {
 
 	@Override
 	public List<NameAndCustomers> getNumberOfCustomers() {
-
 		return countryRepository.findAllNameAndCustomers();
 	}
 
