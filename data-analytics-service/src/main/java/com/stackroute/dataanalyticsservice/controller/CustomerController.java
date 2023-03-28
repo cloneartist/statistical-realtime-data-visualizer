@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.stackroute.dataanalyticsservice.exceptions.CustomerAlreadyExistException;
 import com.stackroute.dataanalyticsservice.model.Customer;
 import com.stackroute.dataanalyticsservice.service.CountryService;
 import com.stackroute.dataanalyticsservice.service.CustomerService;
@@ -21,12 +22,25 @@ public class CustomerController {
 
 	@Autowired
 	CountryService countryService;
-
+	
+	
+	//Used for testing purpose only(kafka will be used in real time)
+	//An API to create data in the customer table
 	@PostMapping("/customer")
 	public Customer saveCustomer(@RequestBody Customer customer) {
-		return customerService.saveCustomer(customer);
+		Customer responseCustomer=new Customer();
+		try {
+			responseCustomer=customerService.saveCustomer(customer);
+		}catch(CustomerAlreadyExistException e){
+			System.out.println(e);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return responseCustomer;
+		
 	}
-
+	
+	//An API to show the customer data in the home page in frontend
 	@GetMapping("/customer")
 	@CrossOrigin
 	public List<Customer> showCustomer() {

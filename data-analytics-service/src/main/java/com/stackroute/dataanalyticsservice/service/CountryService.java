@@ -13,8 +13,6 @@ public interface CountryService {
 
 	void AggregateCountryDataOrAddCountry(String countryName,int creditScore,double salary);
 
-
-
 	List<NameAndCustomers> getNumberOfCustomers();
 
 	List<NameAndCredit> getAverageOfCreditScore();

@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import com.stackroute.dataanalyticsservice.exceptions.CustomerAlreadyExistException;
 import com.stackroute.dataanalyticsservice.model.Customer;
 import com.stackroute.dataanalyticsservice.repository.CountryRepository;
 import com.stackroute.dataanalyticsservice.repository.CustomerRepository;
@@ -60,7 +61,13 @@ class CustomerServiceTest {
 	@Test
 	void testingSaveCustomer() {
 		Mockito.when(customerRepository.save(customer)).thenReturn(customer);
-		Customer responseCustomer=customerService.saveCustomer(customer);
+		Customer responseCustomer=new Customer();
+		try {
+			responseCustomer = customerService.saveCustomer(customer);
+		} catch (CustomerAlreadyExistException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Assert.assertEquals(customer,responseCustomer);
 	}
 	
