@@ -27,7 +27,7 @@ const Chart1 = (props) => {
     const interval = setInterval(() => {
       // console.log('This will run every second!');
       getData();
-    }, 2000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
