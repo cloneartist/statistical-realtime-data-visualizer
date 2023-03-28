@@ -2,6 +2,7 @@ package com.stackroute.dataingestionservice.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -12,6 +13,7 @@ import com.stackroute.dataingestionservice.model.BankDataNormalize;
 import com.stackroute.dataingestionservice.model.User;
 
 @RestController
+@RequestMapping("/ingestion")
 public class ListeningController {
 	private final Producer producer;
 	private final WebClient webClient;
@@ -24,9 +26,9 @@ public class ListeningController {
 		this.objectMapper = new ObjectMapper();
 	}
 
-	@GetMapping("/listen")
+	@GetMapping("/receiveUserData")
 	public void startStreaming() {
-		webClient.get().uri("http://localhost:8092/getUserData").accept(MediaType.APPLICATION_STREAM_JSON).retrieve()
+		webClient.get().uri("http://localhost:9090/streaming/getUserData").accept(MediaType.APPLICATION_STREAM_JSON).retrieve()
 				.bodyToFlux(User.class).doOnNext(this::processUser).blockLast();
 	}
 
