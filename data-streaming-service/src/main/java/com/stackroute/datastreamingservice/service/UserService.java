@@ -2,6 +2,7 @@ package com.stackroute.datastreamingservice.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ public class UserService {
 	
 public Flux<User> getUserData(){
 		
-		File userData;
+		InputStream userData;
 		ObjectMapper objectMapper;
 		User userArray[];
 		Flux<User> user=null;
@@ -27,7 +28,7 @@ public Flux<User> getUserData(){
 	    Logger logger = LoggerFactory.getLogger(UserService.class);
 		
 		/*
-		 * Below code reads data stored locally in the specified path into a file
+		 * Below code reads data stored locally in the specified path into an inputstream
 		 * reference variable and maps it into an array of objects of type User defined
 		 * by the User POJO. It is then passed onto flux which streams the object one by
 		 * one.
@@ -35,7 +36,7 @@ public Flux<User> getUserData(){
 		
 		try {
 		logger.info("Attempting to read file..");
-		userData = new File("src/main/resources/data/CustomerData.json");  
+		userData = getClass().getResourceAsStream("/data/CustomerData.json");
 		objectMapper = new ObjectMapper();
 		logger.info("Attempting to map user data into object array..");
 		userArray = objectMapper.readValue(userData, User[].class);

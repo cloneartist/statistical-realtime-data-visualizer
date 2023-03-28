@@ -24,3 +24,18 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      
+  ingestion:
+   build: data-ingestion-service/
+   ports:
+    - 8090:8090 
+  
+  analytics:
+    build: data-analytics-service/
+    ports:
+     - 8091:8091
+  
+  streaming:
+   build: data-streaming-service/
+   ports:
+    - 8092:8092
