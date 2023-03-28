@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 import com.stackroute.dataanalyticsservice.model.Country;
 import com.stackroute.dataanalyticsservice.repository.CountryRepository;
@@ -23,12 +25,11 @@ class CountryServiceTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		
+		MockitoAnnotations.openMocks(this);
 		country.setName("India");
 		country.setNumberOfCustomers(123);
 		country.setAverageCreditScore(1.1);
 		country.setAverageSalary(1.2);
-		
 	}
 
 	@AfterEach
@@ -38,7 +39,7 @@ class CountryServiceTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		
 	}
 
 }

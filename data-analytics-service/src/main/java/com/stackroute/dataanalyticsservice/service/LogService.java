@@ -2,6 +2,7 @@ package com.stackroute.dataanalyticsservice.service;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,11 @@ public class LogService {
 		txnLog.setCreatedAt(date);
 		AnalyticsServiceLog savedLog = logRepository.save(txnLog);
 		return savedLog;
+	}
+
+	public List<AnalyticsServiceLog> showLog() {
+		// TODO Auto-generated method stub
+		
+		return logRepository.findAll();
 	}
 }
