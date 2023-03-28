@@ -39,9 +39,5 @@ public class Consumer {
 		bankService.saveTxn(banktxn);
 		customerService.saveCustomer(customer);
 
-		countryService.AggregateCountryDataOrAddCountry(banktxn.getCountry(),
-				Integer.parseInt(banktxn.getCredit_card()), Double.parseDouble(banktxn.getEstimated_salary()));
-		;
-
 	}
 }

@@ -25,7 +25,6 @@ public class LogService {
 		txnLog.setCustomer_id(bankModel.getCustomer_id());
 		txnLog.setCreatedAt(date);
 		AnalyticsServiceLog savedLog = logRepository.save(txnLog);
-		System.out.println(txnLog);
 		return savedLog;
 	}
 }
