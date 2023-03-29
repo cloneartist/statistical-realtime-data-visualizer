@@ -21,7 +21,7 @@ public class ApiGatewayApplication {
 		return builder.routes().route(r->r.path("/analytics/**").uri("lb://Data-Analytics-Service"))
 				.route(r->r.path("/ingestion/**").uri("lb://Data-Ingestion-Service"))
 				.route(r->r.path("/streaming/**").uri("lb://Data-Streaming-Service"))
-				.route(r->r.path("/**").uri("lb://WebApp-Frontend-Service")).build();
+				.build();
 
 	}
 

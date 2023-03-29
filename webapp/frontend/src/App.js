@@ -1,19 +1,23 @@
-import { BrowserRouter,Route } from 'react-router-dom';
+import { HashRouter,Route, Routes } from 'react-router-dom';
 import './App.css';
 import Sidenav from './Pages/Sidenav';
 
 
 function App() {
   return (
-    <div>
-        
-        <BrowserRouter>
-        <Sidenav>
-        
-        
-        </Sidenav>
-        </BrowserRouter>
-    </div>
+        <>
+        <HashRouter>
+        <Routes>
+        <Route path="/" element={<Sidenav />} />
+        </Routes>
+      
+      {/* <Sidenav>
+      
+      
+      </Sidenav> */}
+      </HashRouter>
+      </>
+      
   );
 }
 

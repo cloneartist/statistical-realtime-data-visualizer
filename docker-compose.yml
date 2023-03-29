@@ -55,11 +55,11 @@ services:
     - 8761:8761
    restart: always
    
-  web:
-   build: webapp/
-   ports: 
-    - 8069:8069
-   restart: always
+#  web:
+#   build: webapp/
+#   ports:
+#    - 8069:8069
+#   restart: always
        
   mysqldb:
     image: mysql:latest
