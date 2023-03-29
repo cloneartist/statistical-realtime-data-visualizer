@@ -4,26 +4,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import com.stackroute.dataanalyticsservice.exceptions.CustomerAlreadyExistException;
 import com.stackroute.dataanalyticsservice.model.BankRecieveModel;
 import com.stackroute.dataanalyticsservice.model.Customer;
-import com.stackroute.dataanalyticsservice.service.BankService;
 import com.stackroute.dataanalyticsservice.service.CountryService;
 import com.stackroute.dataanalyticsservice.service.CustomerService;
 import com.stackroute.dataanalyticsservice.service.LogService;
 
 @Service
 public class Consumer {
-	@Autowired
-	private BankService bankService;
+	
+    
 	@Autowired
 	private LogService logService;
 
 	@Autowired
 	private CustomerService customerService;
+	
 	@Autowired
 	private CountryService countryService;
-
 	@KafkaListener(topics = "bank_topic", groupId = "group_bank")
+	// Consume the data from kafka using the same Model as the producer
 	public void consume(BankRecieveModel banktxn) {
 		System.out.println("Recieved" + banktxn);
 		Customer customer = new Customer();
@@ -36,8 +37,14 @@ public class Consumer {
 		customer.setEstimated_salary(Double.parseDouble(banktxn.getEstimated_salary()));
 		customer.setGender(banktxn.getGender());
 		logService.saveLog(banktxn);
-		bankService.saveTxn(banktxn);
-		customerService.saveCustomer(customer);
+		
+		try {
+			//save data using customer service.
+			customerService.saveCustomer(customer);
+		} catch (CustomerAlreadyExistException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 }

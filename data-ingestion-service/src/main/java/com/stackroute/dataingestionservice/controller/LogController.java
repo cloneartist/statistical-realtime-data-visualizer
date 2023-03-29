@@ -16,7 +16,7 @@ public class LogController {
 	
 	@Autowired
 	LogService logService;
-	
+	//Mapping to get all logs of data that has been sent
 	@GetMapping("/sent_log")
 	public Mono<List<IngestionServiceLog>> showLog(){
 		return logService.showLog();

@@ -1,5 +1,6 @@
 package com.stackroute.dataanalyticsservice.model;
 
+//This model is just created to fetch the name,Average salary from country table (Refer custom query in the country repository)
 public class NameAndSalary {
 	private String name;
 	private double averageSalary;

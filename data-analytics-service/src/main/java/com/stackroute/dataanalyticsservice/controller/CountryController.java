@@ -14,6 +14,7 @@ import com.stackroute.dataanalyticsservice.model.NameAndCustomers;
 import com.stackroute.dataanalyticsservice.model.NameAndSalary;
 import com.stackroute.dataanalyticsservice.service.CountryService;
 
+//CountryController provides APIs to send the country table data
 @RestController
 @RequestMapping("/analytics")
 public class CountryController {
