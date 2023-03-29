@@ -1,0 +1,47 @@
+#main{
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    box-shadow: 2px 2px 2px ;
+    float: left;
+    margin: 4rem;
+    margin-left: 205px;
+}
+p{
+    text-align: center;
+    font-size: large;
+}
+
+/* sentdata text css code */
+.sentdata{
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: navy;
+    font-size: 22px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    padding:10px
+    
+}
+.datamain{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 30px;
+}
+.heading2{
+    text-align: center;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sendimg{
+    margin-top: 140px;
+    margin-left:0px;
+    height: 180px;
+    width: 210px;
+    transform: translateX(-700px);
+    
+}

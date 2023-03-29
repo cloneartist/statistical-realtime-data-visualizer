@@ -7,16 +7,7 @@ const Chart1 = (props) => {
   const [yComponent, setnumberOfCustomers] = useState([]);
   const [name, setname] = useState([]);
   const getData = async () => {
-    //API URL
-    // const url = 'http://localhost:8091/'+props.url;
-    // try {
-    //   const response = await fetch(url);
-    //   const data = await response.json();
-    //   setnumberOfCustomers(data?.map((item) => item[props.yComponentName]));
-    //   setname(data?.map((item) => item.name));
-    // } catch (error) {
-    //     console.log(error);
-    // }
+  
     await axios(`http://localhost:9090/analytics/${props.url}`).then((res) => {
       setnumberOfCustomers(res.data.map((item) => item[props.yComponentName]));
       setname(res.data.map((item) => item.name));
@@ -44,6 +35,9 @@ const Chart1 = (props) => {
   //chart data for country vs no. of customers
   if (props.yComponentName == "numberOfCustomers") {
     options = {
+      legend: {
+        fontSize: "32px"
+      },
       plotOptions: {
         bar: {
           columnWidth: 50,
@@ -54,13 +48,14 @@ const Chart1 = (props) => {
         enabled: false,
       },
 
-      // fill: {
-      //   colors: ["#b74656"]
-      // },
 
       title: {
         text: props.title,
         align: "center",
+        style:{
+          color:'#1a1859',
+          // fontFamily: 'Geneva',
+          fontSize: '28px'}
       },
       chart: {
         id: "bar-chart",
@@ -78,20 +73,38 @@ const Chart1 = (props) => {
 
       xaxis: {
         categories: name,
+        labels: {
+          style: {
+            fontSize: '15px'
+        }},
         title: {
+          style:{
+            color:'#1a1859',
+          // fontFamily: 'Geneva',
+            fontSize: '18px'},
           text: "Country",
         },
       },
 
       yaxis: [
-        {
+        { 
           labels: {
+            style: {
+              fontSize: '15px'
+          },
             show: true,
             formatter: function (val) {
               return val.toFixed(0);
             },
           },
           title: {
+            style:{
+              color:'#1a1859',
+            // fontFamily: 'Geneva',
+              fontSize: '18px',
+            
+          },
+          
             text: "No. Of Customers",
           },
         },
@@ -100,6 +113,9 @@ const Chart1 = (props) => {
     //chart data for country vs avg creditscore
   } else if (props.yComponentName == "averageCreditScore") {
     options = {
+      legend: {
+        fontSize: "32px"
+      },
       dataLabels: {
         enabled: false,
       },
@@ -110,31 +126,47 @@ const Chart1 = (props) => {
         },
       },
 
-      // fill: {
-      //   colors: ["#1B998B"]
-      // },
 
       title: {
+        
         text: props.title,
+        style:{
+          color:'#1a1859',
+          // fontFamily: 'Geneva',
+          fontSize: '28px'},
         align: "center",
       },
       chart: { id: "bar-chart" },
       xaxis: {
+        labels: {
+          style: {
+              fontSize: '15px'
+          }
+     },
         categories: name,
+        fontSize:'200px',
         title: {
+          style:{
+            color:'#1a1859',
+          // fontFamily: 'Geneva',
+            fontSize: '18px'},
           text: "Country",
         },
       },
 
       yaxis: [
-        {
+        { fontSize:'200px',
           labels: {
+            style: {
+              fontSize: '15px'
+          },
             show: true,
-            // formatter: function(val) {
-            //   return val.toFixed(0);
-            // }
           },
           title: {
+            style:{
+              color:'#1a1859',
+          // fontFamily: 'Geneva',
+              fontSize: '18px'},
             text: "Average Credit Score",
           },
         },
@@ -144,37 +176,62 @@ const Chart1 = (props) => {
   //chart data for country vs avg salary
   else {
     options = {
+      
+      legend: {
+        fontSize: "32px"
+      },
       plotOptions: {
         bar: {
+          
           columnWidth: 50,
           distributed: true,
         },
       },
       dataLabels: {
+        
         enabled: false,
       },
-      // fill: {
-      //   colors: ["#006b3f"]
-      // },
-
+      
       title: {
         text: props.title,
+        
+        style:{
+          color:'#1a1859',
+          // fontFamily: 'Geneva',
+          fontSize: '28px'},
         align: "center",
-        // fontSize:'200px'
+        
       },
-      chart: { id: "bar-chart" },
+      chart: { id: "bar-chart",
+       },
       xaxis: {
         categories: name,
+        labels: {
+          style: {
+              fontSize: '15px'
+          }
+          },
         title: {
+          style:{
+            color:'#1a1859',
+          // fontFamily: 'Geneva',
+            fontSize: '18px'},
           text: "Country",
         },
       },
-      yaxis: [
-        {
+     
+      yaxis: [{
           labels: {
-            show: true,
-          },
+            style:{
+              fontSize:'15px'
+            },
+            show: true,},
           title: {
+            style:{
+              color:'#1a1859',
+          // fontFamily: 'Geneva',
+            fontSize: '18px',
+            offsetY: -30},
             text: "Average Salary",
           },
         },
@@ -184,7 +241,7 @@ const Chart1 = (props) => {
 
   return (
     <div className="chartdet">
-      <Chart options={options} series={series} type="bar" width="800" />
+      <Chart options={options} series={series} type="bar" width="1200" />
     </div>
   );
 };
