@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 //one in customer table and another in country table and provides APIs form these tables
 //These APIs will be used in the frontend 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient 
 public class DataAnalyticsServiceApplication {
 
 	public static void main(String[] args) {

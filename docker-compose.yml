@@ -29,13 +29,43 @@ services:
    build: data-ingestion-service/
    ports:
     - 8090:8090 
+   restart: always
   
   analytics:
     build: data-analytics-service/
     ports:
      - 8091:8091
+    restart: always
   
   streaming:
    build: data-streaming-service/
    ports:
     - 8092:8092
+   restart: always
+    
+  gateway:
+   build: api-gateway/
+   ports:
+    - 9090:9090
+   restart: always
+    
+  eureka:
+   build: eureka-server/
+   ports:
+    - 8761:8761
+   restart: always
+   
+  web:
+   build: webapp/
+   ports: 
+    - 8069:8069
+   restart: always
+       
+  mysql:
+   image: mysql:latest
+   environment:
+    - MYSQL_ROOT_USER=root
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=kafkadb
+   ports:
+    - 3307:3307
