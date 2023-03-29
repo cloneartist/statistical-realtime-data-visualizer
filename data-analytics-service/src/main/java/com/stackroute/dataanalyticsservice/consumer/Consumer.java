@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import com.stackroute.dataanalyticsservice.exceptions.CustomerAlreadyExistException;
 import com.stackroute.dataanalyticsservice.model.BankRecieveModel;
 import com.stackroute.dataanalyticsservice.model.Customer;
 import com.stackroute.dataanalyticsservice.service.BankService;
@@ -37,7 +38,11 @@ public class Consumer {
 		customer.setGender(banktxn.getGender());
 		logService.saveLog(banktxn);
 		bankService.saveTxn(banktxn);
-		customerService.saveCustomer(customer);
+		try {
+			customerService.saveCustomer(customer);
+		} catch (CustomerAlreadyExistException e) {
+			e.printStackTrace();
+		}
 
 	}
 }
