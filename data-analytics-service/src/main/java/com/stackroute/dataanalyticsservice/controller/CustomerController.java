@@ -15,6 +15,7 @@ import com.stackroute.dataanalyticsservice.model.Customer;
 import com.stackroute.dataanalyticsservice.service.CountryService;
 import com.stackroute.dataanalyticsservice.service.CustomerService;
 
+//This CustomerController provides APIs to send data from customer table
 @RestController
 @RequestMapping("analytics")
 public class CustomerController {

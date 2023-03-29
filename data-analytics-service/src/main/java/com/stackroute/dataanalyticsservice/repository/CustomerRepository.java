@@ -11,7 +11,5 @@ import com.stackroute.dataanalyticsservice.model.Customer;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
-
-//	Optional<List<Customer>> findById(int customer_id);
 	
 }

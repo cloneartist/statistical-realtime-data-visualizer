@@ -3,7 +3,7 @@ package com.stackroute.dataanalyticsservice.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-
+//This model is just created to fetch the name,number of customer from country table (Refer custom query in the country repository)
 public class NameAndCustomers {
 	
 	

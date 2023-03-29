@@ -372,7 +372,7 @@ export default function Sidenav() {
             </ListItem>
 
 
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Monitor")}>
+            {/* <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>setMenudata("Monitor")}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -391,7 +391,7 @@ export default function Sidenav() {
                 </ListItemIcon>
                 <ListItemText primary="Monitor" sx={{ opacity: open ? 3 : 0 }} />
               </ListItemButton>
-            </ListItem>
+            </ListItem> */}
 
           
         </List>

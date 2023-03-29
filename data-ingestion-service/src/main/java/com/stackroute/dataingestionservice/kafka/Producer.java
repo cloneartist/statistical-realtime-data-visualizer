@@ -24,7 +24,7 @@ public class Producer {
 	private final Logger log = LoggerFactory.getLogger(ProducerConfig.class);
 
 	private final ReactiveKafkaProducerTemplate<String, BankDataNormalize> reactiveKafkaProducerTemplate;
-
+   
 	public Producer(ReactiveKafkaProducerTemplate<String, BankDataNormalize> reactiveKafkaProducerTemplate,
 			LogService logService) {
 		this.reactiveKafkaProducerTemplate = reactiveKafkaProducerTemplate;

@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+
+//This model is used while receiving the data from kafka which is not in the Customer format
 @Entity
 public class BankRecieveModel {
 

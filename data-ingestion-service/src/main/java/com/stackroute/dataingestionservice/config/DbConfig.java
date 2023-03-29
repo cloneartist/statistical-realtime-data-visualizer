@@ -12,7 +12,7 @@ import io.r2dbc.spi.ConnectionFactory;
 public class DbConfig {
 	@Bean()
 	ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
-
+		//initialize the database
 		ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
 		initializer.setConnectionFactory(connectionFactory);
 		return initializer;
