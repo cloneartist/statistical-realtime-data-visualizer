@@ -26,7 +26,7 @@ public class ListeningService {
 
 	public void startStreaming() {
 		logger.info("Began receiving Json Data");
-		webClient.get().uri("http://localhost:9090/streaming/getUserData").accept(MediaType.APPLICATION_STREAM_JSON)
+		webClient.get().uri("http://gateway:9090/streaming/getUserData").accept(MediaType.APPLICATION_STREAM_JSON)
 				.retrieve().bodyToFlux(User.class).doOnNext(this::processUser).subscribe();
 		logger.info("Completed receiving Json Data");
 	}
