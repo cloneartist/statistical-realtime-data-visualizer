@@ -54,7 +54,13 @@ services:
    ports:
     - 8761:8761
    restart: always
-    
+   
+  web:
+   build: webapp/
+   ports: 
+    - 8069:8069
+   restart: always
+       
   mysql:
    image: mysql:latest
    environment:
@@ -62,4 +68,4 @@ services:
     - MYSQL_ROOT_PASSWORD=password
     - MYSQL_DATABASE=kafkadb
    ports:
-    - 3306:3306
+    - 3307:3307

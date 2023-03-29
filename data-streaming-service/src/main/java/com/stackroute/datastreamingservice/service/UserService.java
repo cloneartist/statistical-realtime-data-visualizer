@@ -33,7 +33,7 @@ public class UserService {
 		Logger logger = LoggerFactory.getLogger(UserService.class);
 		try {
 			logger.info("Attempting to read file..");
-			userData = getClass().getResourceAsStream("/data/CustomerData.json");
+			userData = getClass().getResourceAsStream("/CustomerData.json");
 			logger.info("Attempting to map user data into object array..");
 			userArray= objectMapper.readValue(userData, User[].class);
 			logger.info("Success - Streaming data..");
