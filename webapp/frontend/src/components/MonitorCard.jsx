@@ -7,7 +7,7 @@ import "./MonitorCard.css";
 const MonitorCard=(props)=>{
     const[data,setData]=useState(0);
     const fetchData = async () => {
-        const response = await fetch(`https://srdv.stackroute.io/:${props.url}`);
+        const response = await fetch(`https://srdv.stackroute.io/${props.url}`);
         const data1 = await response.json();
 
 
