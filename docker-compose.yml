@@ -46,7 +46,7 @@ services:
   gateway:
    build: api-gateway/
    ports:
-    - 9090:9090
+    - 8080:8080
    restart: always
     
   eureka:
