@@ -11,7 +11,7 @@ import com.stackroute.dataingestionservice.model.BankDataNormalize;
 import com.stackroute.dataingestionservice.service.UserService;
 
 @RestController
-@RequestMapping("ingestion")
+@RequestMapping("/ingestion")
 public class UserController {
 
 	private UserService userService;

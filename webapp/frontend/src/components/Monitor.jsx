@@ -14,9 +14,9 @@ const Monitor = () =>{
             <hr></hr>
             
             <div>
-                    <MonitorCard  url="8090/sent_log" name="sent log" packet_status="sent" title="Sent From Ingestion Service"></MonitorCard>
+                    <MonitorCard  url="sent_log" name="sent log" packet_status="sent" title="Sent From Ingestion Service"></MonitorCard>
                     <img className='sendimg' src='https://cdn-icons-png.flaticon.com/512/4697/4697980.png'></img>
-                    <MonitorCard  url="8091/receive_log" name="receive log" packet_status="received" title="Received By Analytics Service"></MonitorCard>
+                    <MonitorCard  url="receive_log" name="receive log" packet_status="received" title="Received By Analytics Service"></MonitorCard>
                     </div>
         </div>
              <div className="col-4">

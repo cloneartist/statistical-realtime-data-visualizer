@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stackroute.dataanalyticsservice.model.AnalyticsServiceLog;
@@ -13,6 +14,7 @@ import com.stackroute.dataanalyticsservice.service.LogService;
 //LogController provides API to see the log data of the data received
 //Log data contains the information such as at what time analytics service  received the data from kafka
 @RestController
+@RequestMapping("/analytics")
 public class LogController {
 
 	@Autowired
