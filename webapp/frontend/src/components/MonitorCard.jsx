@@ -21,7 +21,7 @@ const MonitorCard=(props)=>{
             const interval = setInterval(() => {
                 // console.log('This will run every second!');
                 fetchData();
-              }, 1000);
+              }, 700);
               return () => clearInterval(interval);
             // fetchData();
 

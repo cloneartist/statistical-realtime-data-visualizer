@@ -27,10 +27,6 @@ const Home  = () => {
   },[]);
   console.log(rows);
   
-    // axios.get(url).then(res=>{
-    //   console.log(res.data);[]
-    //   //const rows = res.data;
-    // })
     
   
     return (

@@ -67,16 +67,9 @@ const Chart1 = (props) => {
             download: '<b>Download\u2B07\uFE0E</b>'
           }
         },
-        //
-        // animations: {
-        //   enabled: true,
-        //   easing: "linear",
-        //   dynamicAnimation: {
-        //     speed: 1000,
-        //   },
-        // },
+        
       },
-      //
+    
 
       xaxis: {
         categories: name,
@@ -165,7 +158,6 @@ const Chart1 = (props) => {
         title: {
           style:{
             color:'#1a1859',
-          // fontFamily: 'Geneva',
             fontSize: '18px'},
           text: "Country",
         },
@@ -183,7 +175,6 @@ const Chart1 = (props) => {
           title: {
             style:{
               color:'#1a1859',
-          // fontFamily: 'Geneva',
               fontSize: '18px'},
               offsetX:-10, 
             text: "Average Credit Score",
@@ -226,12 +217,7 @@ const Chart1 = (props) => {
         
       },
       chart: { id: "bar-chart",
-      // toolbar: {
-      //   customIcons: [{
-      //     html: '<i class="fa fa-angle-down"></i>',
-      //     onClick: function(e, chartContext){},
-      //     appendTo: 'left' // left / top means the button will be appended to the left most or right most position
-      //    }]}
+   
 
       toolbar: {
             tools: {

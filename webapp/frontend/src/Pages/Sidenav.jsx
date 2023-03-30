@@ -24,7 +24,7 @@ import { AiFillHome,AiFillCreditCard,AiFillCheckCircle,AiFillPieChart,AiFillBank
 import { BiMoney } from 'react-icons/bi';
 import { FaUserCircle} from 'react-icons/fa';
 import { FaUserTie} from 'react-icons/fa';
-import { FiMonitor} from 'react-icons/fi';
+import { MdOutlineMonitorHeart} from 'react-icons/md';
 import './Sidenav.css';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
@@ -360,7 +360,7 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                   <FiMonitor size={30} />
+                   <MdOutlineMonitorHeart size={30} />
                 </ListItemIcon>
                 <ListItemText primary="Monitor" sx={{ opacity: open ? 3 : 0 }} />
               </ListItemButton>
