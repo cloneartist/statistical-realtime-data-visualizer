@@ -33,10 +33,13 @@ const Chart1 = (props) => {
   let options;
 
   //chart data for country vs no. of customers
-  if (props.yComponentName == "numberOfCustomers") {
+  if (props.yComponentName === "numberOfCustomers") {
     options = {
       legend: {
-        fontSize: "32px"
+        fontSize: "20px",
+        horizontalAlign:'center',
+        offsetX:80,
+        offsetY:15,
       },
       plotOptions: {
         bar: {
@@ -59,15 +62,19 @@ const Chart1 = (props) => {
       },
       chart: {
         id: "bar-chart",
-
-        //
-        animations: {
-          enabled: true,
-          easing: "linear",
-          dynamicAnimation: {
-            speed: 1000,
-          },
+        toolbar: {
+          tools: {
+            download: '<b>Download\u2B07\uFE0E</b>'
+          }
         },
+        //
+        // animations: {
+        //   enabled: true,
+        //   easing: "linear",
+        //   dynamicAnimation: {
+        //     speed: 1000,
+        //   },
+        // },
       },
       //
 
@@ -92,6 +99,7 @@ const Chart1 = (props) => {
             style: {
               fontSize: '15px'
           },
+          
             show: true,
             formatter: function (val) {
               return val.toFixed(0);
@@ -104,17 +112,21 @@ const Chart1 = (props) => {
               fontSize: '18px',
             
           },
-          
+         
+         offsetX:-10, 
             text: "No. Of Customers",
           },
         },
       ],
     };
     //chart data for country vs avg creditscore
-  } else if (props.yComponentName == "averageCreditScore") {
+  } else if (props.yComponentName === "averageCreditScore") {
     options = {
       legend: {
-        fontSize: "32px"
+        fontSize: "20px",
+        horizontalAlign:'center',
+        offsetX:80,
+        offsetY:15,
       },
       dataLabels: {
         enabled: false,
@@ -136,12 +148,17 @@ const Chart1 = (props) => {
           fontSize: '28px'},
         align: "center",
       },
-      chart: { id: "bar-chart" },
+      chart: { id: "bar-chart" , toolbar: {
+        tools: {
+          download: '<b>Download\u2B07\uFE0E</b>'
+        }
+      },},
       xaxis: {
         labels: {
           style: {
               fontSize: '15px'
           }
+
      },
         categories: name,
         fontSize:'200px',
@@ -162,11 +179,13 @@ const Chart1 = (props) => {
           },
             show: true,
           },
+          decimalsInFloat:2,
           title: {
             style:{
               color:'#1a1859',
           // fontFamily: 'Geneva',
               fontSize: '18px'},
+              offsetX:-10, 
             text: "Average Credit Score",
           },
         },
@@ -178,7 +197,10 @@ const Chart1 = (props) => {
     options = {
       
       legend: {
-        fontSize: "32px"
+        fontSize: "20px",
+        horizontalAlign:'center',
+        offsetX:80,
+        offsetY:15,
       },
       plotOptions: {
         bar: {
@@ -192,6 +214,7 @@ const Chart1 = (props) => {
         enabled: false,
       },
       
+      
       title: {
         text: props.title,
         
@@ -203,6 +226,18 @@ const Chart1 = (props) => {
         
       },
       chart: { id: "bar-chart",
+      // toolbar: {
+      //   customIcons: [{
+      //     html: '<i class="fa fa-angle-down"></i>',
+      //     onClick: function(e, chartContext){},
+      //     appendTo: 'left' // left / top means the button will be appended to the left most or right most position
+      //    }]}
+
+      toolbar: {
+            tools: {
+              download: '<b>Download\u2B07\uFE0E</b>'
+            }
+          },
        },
       xaxis: {
         categories: name,
@@ -226,6 +261,7 @@ const Chart1 = (props) => {
               fontSize:'15px'
             },
             show: true,},
+            decimalsInFloat:2,
           title: {
             style:{
               color:'#1a1859',
@@ -233,6 +269,7 @@ const Chart1 = (props) => {
             fontSize: '18px',
             offsetY: -30},
             text: "Average Salary",
+            offsetX:-10, 
           },
         },
       ],
@@ -241,7 +278,7 @@ const Chart1 = (props) => {
 
   return (
     <div className="chartdet">
-      <Chart options={options} series={series} type="bar" width="1200" />
+      <Chart options={options} series={series} type="bar" width="1100" />
     </div>
   );
 };

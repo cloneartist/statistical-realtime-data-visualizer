@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const Home  = () => {
   
-  const columns = [{ field: 'customer_id',headerName:'Customer Id' ,width:180},{ field: 'credit_score',headerName:'Credit Score',flex:1}, { field: 'country',headerName:'Country', flex:1},{ field: 'gender',headerName:'Gender' ,width:180},{ field: 'age',headerName:'Age'},{ field: 'balance',headerName:'Balance',flex:1},{ field: 'credit_card',headerName:'Credit Card',flex:1},{ field: 'estimated_salary',headerName:'Estimated Salary', flex:1}];
+  const columns = [{ field: 'customer_id',headerName:<b>CUSTOMER ID </b> ,width:180},{ field: 'credit_score',headerName:<b>CREDIT SCORE</b>,flex:1}, { field: 'country',headerName:<b>COUNTRY</b>, flex:1},{ field: 'gender',headerName:<b>GENDER</b> ,width:180},{ field: 'age',headerName:<b>AGE</b>},{ field: 'balance',headerName:<b>BALANCE</b>,flex:1},{ field: 'credit_card',headerName:<b>CREDIT CARD</b>,flex:1},{ field: 'estimated_salary',headerName:<b>ESTIMATED SALARY</b>, flex:1}];
     let url ='http://localhost:9090/analytics/customer';
 
 
