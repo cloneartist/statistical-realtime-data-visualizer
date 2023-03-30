@@ -51,4 +51,9 @@ public class CustomerServiceImp implements CustomerService {
 		return customerRepository.findAll();
 	}
 
+	@Override
+	public void deleteCustomers() {
+		customerRepository.deleteAll();
+	}
+
 }

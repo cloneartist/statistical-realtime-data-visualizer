@@ -81,4 +81,10 @@ public class CountryServiceImp implements CountryService {
 		return countryRepository.findAllNameAndSalary();
 	}
 
+	@Override
+	public void deleteCountry() {
+		countryRepository.deleteAll();
+	}
+
+
 }

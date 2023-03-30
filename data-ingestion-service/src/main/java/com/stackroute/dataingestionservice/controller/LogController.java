@@ -26,4 +26,10 @@ public class LogController {
 	public Mono<List<IngestionServiceLog>> showLog() {
 		return logService.showLog();
 	}
+
+	@GetMapping("/reset")
+	@CrossOrigin
+	public Mono<Void> deleteAll(){
+		return logService.deleteLogs();
+	}
 }

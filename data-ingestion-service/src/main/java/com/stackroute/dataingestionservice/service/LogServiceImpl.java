@@ -34,5 +34,9 @@ public class LogServiceImpl implements LogService {
 		Mono<List<IngestionServiceLog>> log = logRepository.findAll().collectList();
 		return log;
 	}
-	
+
+	@Override
+	public Mono<Void> deleteLogs() {
+		return logRepository.deleteAll();
+	}
 }

@@ -26,4 +26,10 @@ public class LogController {
 	public List<AnalyticsServiceLog> showLog() {
 		return logservice.showLog();
 	}
+
+	@GetMapping("/deleteLogs")
+	@CrossOrigin
+	public void deleteLogs() {
+		logservice.deleteLogs();
+	}
 }

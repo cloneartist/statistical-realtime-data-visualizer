@@ -49,4 +49,10 @@ public class CustomerController {
 	public List<Customer> showCustomer() {
 		return customerService.showCustomer();
 	}
+
+	@GetMapping("/deleteCustomer")
+	@CrossOrigin
+	public void deleteCustomer() {
+		customerService.deleteCustomers();
+	}
 }

@@ -42,4 +42,10 @@ public class CountryController {
 	public List<NameAndSalary> averageOfSalary(){
 		return countryService.getAverageOfSalary();
 	}
+
+	@GetMapping("/deleteCountry")
+	@CrossOrigin
+	public void deleteCustomer() {
+		countryService.deleteCountry();
+	}
 }

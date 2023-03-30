@@ -19,4 +19,5 @@ public interface CountryService {
 
 	List<NameAndSalary> getAverageOfSalary();
 
+    void deleteCountry();
 }

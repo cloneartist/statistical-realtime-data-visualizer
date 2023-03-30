@@ -10,4 +10,6 @@ public interface LogService {
 	Mono<IngestionServiceLog> saveUser(IngestionServiceLog log);
 
 	Mono<List<IngestionServiceLog>> showLog();
+
+	Mono<Void> deleteLogs();
 }

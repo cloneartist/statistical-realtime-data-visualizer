@@ -43,4 +43,8 @@ public class LogService {
 	public List<AnalyticsServiceLog> showLog() {
 		return logRepository.findAll();
 	}
+
+    public void deleteLogs() {
+		logRepository.deleteAll();
+    }
 }
