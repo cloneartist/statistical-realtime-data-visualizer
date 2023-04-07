@@ -8,7 +8,9 @@ const Chart1 = (props) => {
   const [name, setname] = useState([]);
   const getData = async () => {
   
-    await axios(`https://srdv.stackroute.io/analytics/${props.url}`).then((res) => {
+    await axios(`http://localhost:8080/analytics/${props.url}`)
+
+        .then((res) => {
       setnumberOfCustomers(res.data.map((item) => item[props.yComponentName]));
       setname(res.data.map((item) => item.name));
     });
