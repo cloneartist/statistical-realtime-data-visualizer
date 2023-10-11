@@ -1,2 +1,2 @@
-# statistical-realtime-data-visualizer
+# Statistical-realtime-data-visualizer
 
